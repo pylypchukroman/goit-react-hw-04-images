@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import style from './Modal.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -30,6 +30,11 @@ export const Modal = ({ children, onClose }) => {
     </div>,
     modalRoot
   );
+};
+
+Modal.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

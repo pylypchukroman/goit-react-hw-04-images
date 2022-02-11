@@ -1,25 +1,14 @@
 import style from './Searchbar.module.css';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Searchbar = ({ changeSearch }) => {
-  // state = {
-  //   input: '',
-  // };
   const [input, setInput] = useState('');
-
-  // handleChange = e => {
-  //   this.setState({ input: e.target.value });
-  // };
 
   const handleChange = e => {
     const { value } = e.target;
     setInput(value);
   };
-
-  // hendleSubmit = e => {
-  //   e.preventDefault();
-  //   this.props.changeSearch(this.state.input);
-  // };
 
   const hendleSubmit = e => {
     e.preventDefault();
@@ -46,4 +35,7 @@ const Searchbar = ({ changeSearch }) => {
   );
 };
 
+Searchbar.propTypes = {
+  changeSearch: PropTypes.func.isRequired,
+};
 export default Searchbar;

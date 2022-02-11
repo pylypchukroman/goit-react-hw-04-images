@@ -12,7 +12,7 @@ const setParams = ({ q, page }) =>
     safesearch: 'true',
   });
 
-export const getImage = (q = 'coding', page = 1) => {
+export const getImage = (q = 'random', page = 1) => {
   setParams({ q, page });
   return axios
     .get('/')
